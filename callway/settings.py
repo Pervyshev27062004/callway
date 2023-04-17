@@ -29,6 +29,7 @@ ALLOWED_HOSTS = []
 
 AUTH_USER_MODEL = 'users.User'
 
+
 AUTHENTICATION_BACKENDS = (
     'users.backends.EmailAuthBackend',
     'django.contrib.auth.backends.ModelBackend',
@@ -84,9 +85,9 @@ WSGI_APPLICATION = 'callway.wsgi.application'
 DATABASES = {
    "default": {
        "ENGINE": "django.db.backends.postgresql",
-       "NAME": "todo",
-       "USER": "todo",
-       "PASSWORD": "todo",
+       "NAME": "callway",
+       "USER": "callway",
+       "PASSWORD": "callway",
        "HOST": "localhost",
        "PORT": 5432,
    }
@@ -128,7 +129,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
+STATICFILES_DIRS = [BASE_DIR / "static"]
+
+STATIC_ROOT = None
 STATIC_URL = 'static/'
+
+MEDIA_ROOT = BASE_DIR / "media"
+MEDIA_URL = "media/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
